@@ -79,7 +79,7 @@ export default function SignInForm() {
         />
         <div className="buttons-container">
           <Button type="submit">Sign In</Button>
-          <Button buttonType="google" type="submit" onClick={signInWithGoogle}>
+          <Button type="button" buttonType="google" onClick={signInWithGoogle}>
             Google Sign In
           </Button>
         </div>
