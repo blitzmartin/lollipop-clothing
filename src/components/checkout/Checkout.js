@@ -1,14 +1,10 @@
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import { CartContext } from "../../context/CartContext";
 import "./checkout.styles.scss";
 import CheckoutItem from "../checkout-item/CheckoutItem";
 
 export default function Checkout() {
-  const { cartItems } = useContext(CartContext);
-
-  /*   const sum = cartItems.map(item => item.price).reduce((total, currentSum) => currentSum + total, 0);
-  console.log(sum);
-  setTotal(sum); */
+  const { cartItems, cartTotal } = useContext(CartContext);
 
   return (
     <div className="checkout-container">
@@ -32,7 +28,7 @@ export default function Checkout() {
       {cartItems.map((cartItem) => {
         return <CheckoutItem key={cartItem.id} cartItem={cartItem} />;
       })}
-      <span className="total">TOTAL: 0$</span>
+      <span className="total">TOTAL: {cartTotal}$</span>
     </div>
   );
 }

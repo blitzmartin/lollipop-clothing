@@ -11,7 +11,9 @@ export default function CartDropdown() {
 
   const goToCheckoutHandler = () => {
     setIsCartOpen(false);
-    navigate('/checkout')};
+    navigate('/checkout')
+  };
+  
   return (
     <div className="cart-dropdown-container">
       <div className="cart-items">
