@@ -6,19 +6,33 @@ import CheckoutItem from "../checkout-item/CheckoutItem";
 export default function Checkout() {
   const { cartItems } = useContext(CartContext);
 
-/*   const sum = cartItems.map(item => item.price).reduce((total, currentSum) => currentSum + total, 0);
+  /*   const sum = cartItems.map(item => item.price).reduce((total, currentSum) => currentSum + total, 0);
   console.log(sum);
   setTotal(sum); */
 
   return (
-    <div>
-      <h1>CHECKOUT</h1>
-      <div className="checkout-container">
-        {cartItems.map((item) => { 
-          return <CheckoutItem key={item.id} item={item} />;
-        })}
+    <div className="checkout-container">
+      <div className="checkout-header">
+        <div className="header-block">
+          <span>Product</span>
+        </div>
+        <div className="header-block">
+          <span>Description</span>
+        </div>
+        <div className="header-block">
+          <span>Quantity</span>
+        </div>
+        <div className="header-block">
+          <span>Price</span>
+        </div>
+        <div className="header-block">
+          <span>Remove</span>
+        </div>
       </div>
-      <h3>TOTAL: 0$</h3>
+      {cartItems.map((cartItem) => {
+        return <CheckoutItem key={cartItem.id} cartItem={cartItem} />;
+      })}
+      <span className="total">TOTAL: 0$</span>
     </div>
   );
 }
