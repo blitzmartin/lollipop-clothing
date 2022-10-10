@@ -1,9 +1,9 @@
-import "./category-item.styles.scss";
+import "./directory-item.styles.scss";
 
-export default function CategoryItem({ category }) {
+export default function DirectoryItem({ category }) {
   const { id, title, imageUrl } = category;
   return (
-    <div key={id} className="category-container">
+    <div key={id} className="directory-item-container">
       <div
         className="background-image"
         style={{
@@ -11,7 +11,7 @@ export default function CategoryItem({ category }) {
         }}
       />
       <img src="" alt="" />
-      <div className="category-body-container">
+      <div className="body">
         <h2>{title.toUpperCase()}</h2>
         <p>SHOP NOW</p>
       </div>
